@@ -5,6 +5,10 @@
     --color-bg-dark: #222725;
     --color-txt-light: #f7f7f7;
     --color-txt-dark: #222725;
+    --color-txt-primary: #222725;
+    --color-txt-second: #ff0054;
+    --color-txt-third: #ff5400;
+    --color-txt-fourth: #9b5de5;
 }
 
 *{
@@ -133,9 +137,116 @@ i{
 }
 
 .wrapper{
-    height: 150vh;
+    padding-inline: 10vh;
+}
+.feactured-box{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    min-height: 700px;
 }
 
+.feactured-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+}
+.feactured-text-card span{
+    background: var(--color-txt-third);
+    color: var(--color-txt-light);
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.feactured-name{
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--color-txt-primary);
+    margin-block: 20px;
+}
+.typedText{
+    text-transform: capitalize;
+    color: var(--color-txt-second);
+}
+
+.feactured-text-info{
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: var(--color-txt-primary);
+}
+.feactured-text-btn{
+    display: flex;
+    gap: 20px;
+}
+
+.feactured-text-btn>.blue-btn{
+    background: var(--color-txt-fourth);
+    color: var(--color-txt-light);
+}
+
+.feactured-text-btn>.blue-btn:hover{
+    background: var(--color-txt-third);
+}
+
+.social_icons{
+    display: flex;
+    margin-top: 5em;
+    gap: 30px;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 45% 55% 45% 55%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    
+}
+
+.icon i {
+    font-size: 15px;
+    margin: auto;
+}
+
+.icon:hover{
+    background: var(--color-txt-fourth)
+}
+
+.feactured-img{
+    display: flex;
+    margin: 100px;
+    justify-content: right;
+    align-content: center;
+}
+.image{
+    margin: auto 0;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: imgFloat 7s ease-in-out infinite;
+}
+.image img{
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+
+}
+
+@keyframes imgFloat{
+    50%{
+        transform: translateY(10px);
+        border-radius: 45% 55% 45% 55%;
+    }
+}
 
 /* media query = 900px / responsive */
 @media only screen and (max-width: 900px) { 
