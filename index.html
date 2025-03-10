@@ -1,45 +1,50 @@
 <!DOCTYPE html>
-<html lang="es-mx">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Phill</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Portfolio Phill</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="header__menu">
-            <a  class="header__menu__link" href="#">Inicio</a> 
-            <a  class="header__menu__link" href="about.html">Sobe Mi</a> 
-        </nav>
-    </header>
-    <main class="presentacion">
-        <section class="presentacion__contenido">
-            <h1 class="presentacion__contenido__titulo">
-                Bienvenido a mi Portafolio
-                <strong class="titulo-destaque">Soy Phill Un Gusto!
-                </strong></h1>
-                <p class="presentacion__contenido__texto">¡Hola! Soy segundo phill, Futuro desarrolladora Front-end con
-                    especialización en React, HTML y CSS. Pronto me Actualizare y tambien Actualizare
-                    este portafolio
-
+    <div class="container">
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">
+                    Phill
                 </p>
-                <div class="presentacion__enlances">
-                 <h2 class="presentacion__enlaces_subtitulo">Mis Redes:</h2>
-                 <a class="presentacion__enlaces__link" href="https://www.instagram.com/soyphill_official/">
-                    <img src="./assets/img/instagram.png" alt="Instagram">Instagram</a>
-                 <a class="presentacion__enlaces__link" href="https://github.com/PhillCodex/">
-                    <img src="./assets/img/github.png" alt="GitHub">GitHub</a>
-                    <a class="presentacion__enlaces__link" href="https://twitch.tv/soyphill">
-                        <img src="./assets/img/twitch.png" alt="twitch">twitch</a>
-                </div>
-        </section>
-            <img class="presentacion__imagen" src="./assets/img/phill-foto.jpg" alt="Mi foto no es la mejor, pero ahi vamos">
-    </main>
-    <footer class="footer">
-        <p>Desarrollado por Phill</p>
-    </footer>
+            </div>
+            <div class="nav-menu" id="mymenu">
+                <ul class="nav-menu_ul">
+                    <li class="nav-menu_list">
+                        <a href="#home" class="nav-menu_link"></i>Home</a>
+                    </li>
+                    <li class="nav-menu_list">
+                        <a href="#about" class="nav-menu_link"></i>About</a>
+                    </li>
+                    <li class="nav-menu_list">
+                        <a href="#proyectos" class="nav-menu_link"></i>Proyectos</a>
+                    </li>
+                    <li class="nav-menu_list">
+                        <a href="#tecnologias" class="nav-menu_link">Tecnologia</a>
+                    </li>
+                    <li class="nav-menu_list">
+                        <a href="#contact" class="nav-menu_link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn">Descargar CV <i class="bi bi-file-earmark-arrow-down"></i></button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bi bi-list" onclick="btnClip()"></i>
+            </div>
+        </nav>
+        <main class="wrapper">
+
+        </main>
+    </div>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
