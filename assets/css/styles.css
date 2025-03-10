@@ -143,6 +143,9 @@ i{
     position: relative;
     display: flex;
     height: 100vh;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     min-height: 700px;
 }
 
@@ -220,31 +223,82 @@ i{
     background: var(--color-txt-fourth)
 }
 
-.feactured-img{
+.feactured-image{
     display: flex;
-    margin: 100px;
     justify-content: right;
+    margin-left: 40px;
     align-content: center;
 }
-.image{
+.image {
     margin: auto 0;
     width: 380px;
     height: 380px;
     border-radius: 50%;
     overflow: hidden;
-    animation: imgFloat 7s ease-in-out infinite;
+    position: relative;
 }
-.image img{
-    width: 380px;
-    height: 380px;
+
+.image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: red;
+    border-right-color: yellow;
+    border-bottom-color: orange;
+    border-left-color: yellow;
+    animation: rotateBorder 2s linear infinite;
+    box-sizing: border-box;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-
+    border-radius: 50%;
 }
 
-@keyframes imgFloat{
-    50%{
-        transform: translateY(10px);
-        border-radius: 45% 55% 45% 55%;
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.scroll-btn{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--color-txt-second);
+    background: var(--color-txt-light);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.scroll-btn i{
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1024px){
+    .feactured-text{
+        padding: 0;
+    }
+    .image, .image img{
+        width: 320px;
+        height: 320px;
     }
 }
 
@@ -279,5 +333,34 @@ i{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .feactured-box{
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+    }
+    .feactured-text{
+        width: 100%;
+        order: 2;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: center;
+        min-height: 60vh;
+    }
+    .social_icons{
+        margin-top: 2em;
+    }
+    .feactured-image{
+        order: 1;
+        justify-content: center;
+        margin: 0;
+        min-height: 150px;
+        width: 100%;
+        margin-top: 65px;
+    }
+    .image, .image img{
+        width: 150px;
+        height: 150px;
     }
 }
