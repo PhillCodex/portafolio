@@ -1,28 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root{
-    --color-bg-light: #edf6f9;
-    --color-bg-dark: #222725;
-    --color-txt-light: #f7f7f7;
-    --color-txt-dark: #222725;
-    --color-txt-primary: #222725;
+    /* fuente    */
+    --font-primary: 'Poppins', sans-serif;
+    /* colores primarios */
     --color-txt-second: #ff0054;
     --color-txt-third: #ff5400;
     --color-txt-fourth: #9b5de5;
     --color-txt-fixteen: #f8f9fa;
-    --color-boxshadow-firts: #adb5bd;
     --color-txt-sevent: #0051ff;
+}
+
+html[data-theme="light"]{
+    /* definir colores */
+    --color-bg: #edf6f9;
+    --color-bg-icon: #edf6f9;
+    --color-text-primary:#222725;
+    --color-text-secondary: #f8f9fa;
+    --box-shadow-color-firts: rgba(0, 0, 0, 0.25);
+    --color-boxshadow-firts: #adb5bd;
+    
+}
+
+
+html[data-theme="dark"]{
+    /* definir colores*/
+    --color-bg: #222725;
+    --color-bg-icon: #edf6f9;
+    --color-text-primary:#f7f7f7;
+    --color-text-secondary: #3c096c;
+    --box-shadow-color-firts: rgba(0, 0, 0, 0.7);
+    --color-boxshadow-firts: #adb5bd;
+    
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
 }
-
 html{
     scroll-behavior: smooth;
+}
+body{
+    background: var(--color-bg);
 }
 /* Scrollbar */
 ::-webkit-scrollbar{
@@ -42,11 +64,6 @@ html{
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
-/*base */
-body{
-    background: var(--color-bg-light);
-}
-
 .container{
     width: 100%;
     position: relative;
@@ -60,7 +77,7 @@ nav{
     width: 100%;
     height: 90px;
     line-height: 90px;
-    background: var(--color-bg-light);
+    background: var(--color-bg);
     padding-inline: 9vw;
     transition: .3s;
     z-index: 100;
@@ -72,7 +89,7 @@ nav{
 .nav-name{
     font-size: 30px;
     font-weight: 600;
-    color: var(--color-txt-dark);
+    color: var(--color-text-primary);
 }
 
 .nav-menu, .nav-menu_ul{
@@ -88,7 +105,7 @@ nav{
 .nav-menu_link{
     position: relative;
     text-decoration: none;
-    color: var(--color-txt-dark);
+    color: var(--color-text-primary);
     font-weight: 500;
     margin-inline: 20px;
 }
@@ -99,7 +116,7 @@ nav{
     bottom: -3px;       
     width: 0;          
     height: 2px;
-    background-color: black;
+    background-color: var(--color-text-primary);
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%);
 }
@@ -130,8 +147,8 @@ nav{
     margin-left: 10px;
 }
 .btn:hover{
-    background: var(--color-txt-dark);
-    color: var(--color-txt-light);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
 }
 /*diseños globales de iconos*/
 i{
@@ -164,7 +181,7 @@ i{
 }
 .feactured-text-card span{
     background: var(--color-txt-third);
-    color: var(--color-txt-light);
+    color: var(--color-text-primary);
     padding: 3px 8px;
     border-radius: 5px;
 }
@@ -172,8 +189,8 @@ i{
 .feactured-name{
     font-size: 50px;
     font-weight: 600;
-    color: var(--color-txt-primary);
     margin-block: 20px;
+    color: var(--color-text-primary);
 }
 .typedText{
     text-transform: capitalize;
@@ -183,7 +200,7 @@ i{
 .feactured-text-info{
     font-size: 15px;
     margin-bottom: 30px;
-    color: var(--color-txt-primary);
+    color: var(--color-text-primary);
 }
 .feactured-text-btn{
     display: flex;
@@ -192,7 +209,7 @@ i{
 
 .feactured-text-btn>.blue-btn{
     background: var(--color-txt-fourth);
-    color: var(--color-txt-light);
+    color: var(--color-text-primary);
 }
 
 .feactured-text-btn>.blue-btn:hover{
@@ -212,8 +229,9 @@ i{
     width: 40px;
     height: 40px;
     border-radius: 45% 55% 45% 55%;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 5px 0px var(--box-shadow-color-firts);
     cursor: pointer;
+    background: var(--color-bg-icon);
     
 }
 
@@ -286,10 +304,10 @@ i{
     height: 50px;
     gap: 5px;
     text-decoration: none;
-    color: var(--color-txt-second);
-    background: var(--color-txt-light);
+    color: var(--color-text-primary);
+    background: var(--color-bg);
     border-radius: 30px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 5px 0px var(--box-shadow-color-firts);
 }
 .scroll-btn:hover{
     background: var(--color-txt-fourth);
@@ -319,7 +337,7 @@ i{
 }
 .top-header h1{
     font-weight: 600;
-    color: var(--color-txt-primary);
+    color: var(--color-text-primary);
     margin-bottom: 10px;
 }
 
@@ -343,7 +361,7 @@ h3{
     padding-inline: 20px;
     width: 100%;
     background: var(--color-txt-fixteen);
-    box-shadow: 1px 8px 10px 2px var(--color-boxshadow-firts);
+    box-shadow: 1px 8px 10px 2px var(--box-shadow-color-firts);
     border-radius: 20px;
 }
 
@@ -358,13 +376,13 @@ h3{
     right: 20px;
     bottom: 20px;
     background: var(--color-txt-fourth);
-    color: var(--color-txt-light);
+    color: var(--color-text-primary);
     border-radius: 20px;
 }
 
 .about-btn button:hover{
     background: var(--color-txt-second);
-    color: var(--color-txt-light);
+    color: var(--color-text-primary);
 }
 
 .skills-box{
@@ -384,7 +402,7 @@ h3{
 .skills-list span{
     font-size: 14px;
     background: var(--color-txt-fourth);
-    color: var(--color-txt-light);
+    color: var(--color-text-primary);
     padding: 2px 10px;
     border-radius: 5px;
 }
@@ -405,9 +423,9 @@ h3{
     flex-direction: column;
     width: 30%;
     height: 250px;
-    background: var(--color-txt-fixteen);
+    background: var(--color-text-secondary);
     border-radius: 20px;
-    box-shadow: 1px 8px 10px 2px var(--color-boxshadow-firts);
+    box-shadow: 1px 8px 10px 2px var(--box-shadow-color-firts);
     overflow: hidden;
 }
 
@@ -419,7 +437,7 @@ h3{
 
 .proyect-box label{
     font-size: 15px;
-    color: var(--color-txt-primary);
+    color: var(--color-text-primary);
 }
 
 .proyect-box::after, .contact-info::after{
@@ -440,7 +458,7 @@ h3{
 .proyect-box:hover.proyect-box>i,
 .proyect-box:hover.proyect-box>h3,
 .proyect-box:hover.proyect-box>label{
-    color: var(--color-bg-light);
+    color: var(--color-bg);
     z-index: 2;
 }
 
