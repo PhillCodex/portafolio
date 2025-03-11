@@ -23,3 +23,14 @@ function headerShadow() {
         navHeader.style.lineHeight = "90px";
     }
 }
+
+var typingEffect = new Typed(".typedText", {
+    strings: ["SysAdmin", "CMS Specialist", "Full Stack Developer"],
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 2000
+});
+
+ScrollReveal().reveal('.feactured-box', { delay: 500 });
+ScrollReveal().reveal('.section', { delay: 600 });
