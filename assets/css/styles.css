@@ -142,6 +142,7 @@ nav{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s;
+    transition: background-color 0.3s ease-in-out; /* Efecto suave en el fondo */
 }
 .btn>i{
     margin-left: 10px;
@@ -462,15 +463,27 @@ h3{
     z-index: 2;
 }
 
+.contact-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-container_rol{
+    position: relative;
+    display: flex;
+    bottom: 15px;
+}
 .contact-info{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 30px;
-    width: 500px;
-    height: 315px;
+    padding: 20px 100px;
+    width: 100%;
+    height: 350px;
     background: var(--color-txt-second);
     border-radius: 10px;
     box-shadow: 1px 8px 10px 2px var(--color-boxshadow-firts);
@@ -523,6 +536,7 @@ textarea{
     width: 100%;
     height: 250px;
     background: transparent;
+    color: var(--color-text-primary);
     border: 2px solid #AAA;
     border-radius: 10px;
     padding: 15px 20px;
@@ -541,6 +555,21 @@ textarea{
 }
 .form-button i{
     font-size: 18px;
+}
+
+input{
+    color: var(--color-text-primary);
+}
+input:focus{
+    color: var(--color-text-primary);
+}
+
+.boton-animar i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-animar:hover i{
+    transform: rotate(45deg);
 }
 
 @media only screen and (max-width: 1024px){
